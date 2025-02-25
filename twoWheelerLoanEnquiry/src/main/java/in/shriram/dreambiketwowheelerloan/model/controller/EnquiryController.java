@@ -42,7 +42,7 @@ public class EnquiryController {
 		return new ResponseEntity<List<Enquiry>>(eq, HttpStatus.OK);
 	}
 	
-	@GetMapping("enquiry/{customerId}")
+	@GetMapping("/enquiry/{customerId}")
 	public ResponseEntity<Enquiry> getEnquirySingle(@PathVariable("customerId") int customerId) {
 		
 		Enquiry eo = es.getEnquiry(customerId);
