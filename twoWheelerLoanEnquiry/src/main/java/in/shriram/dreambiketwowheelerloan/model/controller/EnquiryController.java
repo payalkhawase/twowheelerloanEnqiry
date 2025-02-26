@@ -88,7 +88,8 @@ public class EnquiryController {
 	
     } 
 	
-	@PutMapping("updateEnquiryStatus")
+	
+	@PutMapping("/updateEnquiryStatus")
 	public ResponseEntity<Enquiry> updateEnquiryStatus(@RequestBody Enquiry e){
 		
 		Enquiry er=es.updateEnquiryStatus(e);
@@ -96,7 +97,7 @@ public class EnquiryController {
 		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
 	}
 	
-	@GetMapping("enquiryByCibil/{cbCibilId}")
+	@GetMapping("/enquiryByCibil/{cbCibilId}")
 	public ResponseEntity<Enquiry> getEnquiryByCibil(@PathVariable("cbCibilId") int cbCibilId) {
 		
 		Enquiry eo = es.getEnquiryByCibil(cbCibilId);
@@ -104,12 +105,15 @@ public class EnquiryController {
 		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
 	}
 	
-	@GetMapping("enquiry/getPendingEnquiry")
-	public ResponseEntity<List<Enquiry>> pendingEnquiry(@PathVariable("enquiryStatus") String enquiryStatus)
+
+	
+	@GetMapping("/enquiry/getPendingEnquiry")
+	public ResponseEntity<List> pendingEnquiry()
+
 	{
-		List<Enquiry> eq = es.pendingEnquiry();
+		List eq = es.pendingEnquiry();
 		
-		return new ResponseEntity<List<Enquiry>>(eq, HttpStatus.OK);
+		return new ResponseEntity<List>(eq, HttpStatus.OK);
 	}
 	
 }
