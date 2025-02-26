@@ -23,11 +23,11 @@ public interface EnquiryService {
 
    public Enquiry getEnquiryByStatus(int customerId);
 
-	public List<Cibil> ShowRejectedEnquiry();
-
-	
-
 	public List<Enquiry> pendingEnquiry();
+
+	public List<Cibil> ShowApprovedEnquiry();
+
+	public List<Cibil> ShowRejectedEnquiry();
 
 	
 }

@@ -2,6 +2,7 @@ package in.shriram.dreambiketwowheelerloan.model.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,7 @@ public class EnquiryController {
 
 	@Autowired
 	EnquiryService es;
+	
 	
 	@PostMapping("/add")
 	public ResponseEntity<Enquiry> setAllData(@RequestBody Enquiry e){
@@ -87,7 +89,14 @@ public class EnquiryController {
 		return new ResponseEntity<List<Cibil>>(cb, HttpStatus.OK);
 	
     } 
+	@GetMapping("/ApprovedEnquiry")
+	public ResponseEntity<List<Cibil>> showapprovedenquiry() {
+		
+		List<Cibil> cb = es.ShowApprovedEnquiry();
+		
+		return new ResponseEntity<List<Cibil>>(cb, HttpStatus.OK);
 	
+    } 
 	
 	@PutMapping("/updateEnquiryStatus")
 	public ResponseEntity<Enquiry> updateEnquiryStatus(@RequestBody Enquiry e){
@@ -96,8 +105,8 @@ public class EnquiryController {
 		
 		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
 	}
-	
 	@GetMapping("/enquiryByCibil/{cbCibilId}")
+
 	public ResponseEntity<Enquiry> getEnquiryByCibil(@PathVariable("cbCibilId") int cbCibilId) {
 		
 		Enquiry eo = es.getEnquiryByCibil(cbCibilId);
