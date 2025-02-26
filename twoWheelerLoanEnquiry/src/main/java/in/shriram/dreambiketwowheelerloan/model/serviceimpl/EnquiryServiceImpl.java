@@ -103,7 +103,18 @@ public class EnquiryServiceImpl implements EnquiryService {
 	}
 
 	
-	
+
+	@Override
+	public List ShowRejectedEnquiry() {
+		
+		List cb=er.findByEnquiryStatus("Rejected");
+		
+		
+		
+		
+		
+		return  cb;
+	}
 
 	@Override
 	public Enquiry updateEnquiryStatus(Enquiry e) {
@@ -133,24 +144,19 @@ public class EnquiryServiceImpl implements EnquiryService {
 
 	@Override
 	public List<Enquiry> pendingEnquiry() {
-		return er.findByenquiryStatus("Pending");
+		return er.findByEnquiryStatus("Pending");
 	}
 
 	@Override
 	public List ShowApprovedEnquiry() 
 	{
-		List cb=er.findByenquiryStatus("Pending");
+		List cb=er.findByEnquiryStatus("Pending");
 		return cb;
 		
        
 	}
 
-	@Override
-	public List<Cibil> ShowRejectedEnquiry() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	
      
 

@@ -2,6 +2,7 @@ package in.shriram.dreambiketwowheelerloan.model.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,7 @@ public class EnquiryController {
 
 	@Autowired
 	EnquiryService es;
+	
 	
 	@PostMapping("/add")
 	public ResponseEntity<Enquiry> setAllData(@RequestBody Enquiry e){
@@ -95,17 +97,15 @@ public class EnquiryController {
 	
     } 
 	
-	
-	@PutMapping("updateEnquiryStatus")
+	@PutMapping("/updateEnquiryStatus")
 	public ResponseEntity<Enquiry> updateEnquiryStatus(@RequestBody Enquiry e){
 		
 		Enquiry er=es.updateEnquiryStatus(e);
 		
 		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
 	}
-	
-	
-	@GetMapping("enquiryByCibil/{cbCibilId}")
+	@GetMapping("/enquiryByCibil/{cbCibilId}")
+
 	public ResponseEntity<Enquiry> getEnquiryByCibil(@PathVariable("cbCibilId") int cbCibilId) {
 		
 		Enquiry eo = es.getEnquiryByCibil(cbCibilId);
@@ -113,12 +113,12 @@ public class EnquiryController {
 		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
 	}
 	
-	@GetMapping("enquiry/getPendingEnquiry")
-	public ResponseEntity<List<Enquiry>> pendingEnquiry()
+	@GetMapping("/enquiry/getPendingEnquiry")
+	public ResponseEntity<List> pendingEnquiry()
 	{
-		List<Enquiry> eq = es.pendingEnquiry();
+		List eq = es.pendingEnquiry();
 		
-		return new ResponseEntity<List<Enquiry>>(eq, HttpStatus.OK);
+		return new ResponseEntity<List>(eq, HttpStatus.OK);
 	}
 	
 }
