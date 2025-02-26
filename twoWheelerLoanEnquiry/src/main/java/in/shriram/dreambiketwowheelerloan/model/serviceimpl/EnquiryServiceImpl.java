@@ -104,15 +104,15 @@ public class EnquiryServiceImpl implements EnquiryService {
 
 	
 	@Override
-	public List<Cibil> ShowRejectedEnquiry() {
+	public List ShowRejectedEnquiry() {
 		
-		Cibil cb=er.findByEnquiryStatus("Rejected");
+		List cb=er.findByEnquiryStatus("Rejected");
 		
-		Cibil c = new Cibil();
 		
-		c.setStatus(c.getStatus());
 		
-		return  cr.findAll();
+		
+		
+		return  cb;
 	}
 
 	@Override
@@ -140,5 +140,13 @@ public class EnquiryServiceImpl implements EnquiryService {
 		
 		return er.findByCbCibilId(cbCibilId);
 	}
+
+	@Override
+	public List<Enquiry> pendingEnquiry() {
+		return er.findByEnquiryStatus("Pending");
+	}
+
+	
+     
 
 }
