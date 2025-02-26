@@ -22,7 +22,7 @@ import lombok.Data;
 public class Enquiry {
 
 	@Id  
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int customerId;
 	private String firstname;
 	private String lastName;
