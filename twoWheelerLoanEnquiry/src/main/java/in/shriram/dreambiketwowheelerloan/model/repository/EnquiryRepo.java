@@ -15,7 +15,9 @@ public interface EnquiryRepo extends JpaRepository<Enquiry, Integer>{
 	public Enquiry findByCbCibilId(int cbCibilId);
 
 
-	public List<Enquiry> findByenquiryStatus(String string);
+	public List findByEnquiryStatus(String str);
+
+	
 
 	
 
