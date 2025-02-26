@@ -33,6 +33,7 @@ public class EnquiryController {
 		Enquiry en=es.setAllData(e);
 		
 		return new ResponseEntity<Enquiry>(en,HttpStatus.CREATED);
+		
 	}
 	
 
@@ -113,8 +114,11 @@ public class EnquiryController {
 		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
 	}
 	
+
+	
 	@GetMapping("/enquiry/getPendingEnquiry")
 	public ResponseEntity<List> pendingEnquiry()
+
 	{
 		List eq = es.pendingEnquiry();
 		

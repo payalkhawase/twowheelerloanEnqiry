@@ -150,7 +150,7 @@ public class EnquiryServiceImpl implements EnquiryService {
 	@Override
 	public List ShowApprovedEnquiry() 
 	{
-		List cb=er.findByEnquiryStatus("Pending");
+		List cb=er.findByEnquiryStatus("Approved");
 		return cb;
 		
        
