@@ -140,9 +140,11 @@ public class EnquiryServiceImpl implements EnquiryService {
 	}
 
 	@Override
-	public List<Enquiry> pendingEnquiry(String enquiryStatus) {
-		
-		return er.findAll();
+	public List<Enquiry> pendingEnquiry() {
+		return er.findByenquiryStatus("Pending");
 	}
+
+	
+     
 
 }
