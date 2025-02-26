@@ -104,7 +104,7 @@ public class EnquiryController {
 		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
 	}
 	
-	@GetMapping("enquiry/getPendingEnquiry/{enquiryStatus}")
+	@GetMapping("enquiry/getPendingEnquiry")
 	public ResponseEntity<List<Enquiry>> pendingEnquiry(@PathVariable("enquiryStatus") String enquiryStatus)
 	{
 		List<Enquiry> eq = es.pendingEnquiry(enquiryStatus);
