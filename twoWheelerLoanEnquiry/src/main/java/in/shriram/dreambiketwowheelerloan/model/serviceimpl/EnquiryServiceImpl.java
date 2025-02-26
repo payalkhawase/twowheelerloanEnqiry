@@ -103,6 +103,7 @@ public class EnquiryServiceImpl implements EnquiryService {
 	}
 
 	
+
 	@Override
 	public List ShowRejectedEnquiry() {
 		
@@ -146,6 +147,16 @@ public class EnquiryServiceImpl implements EnquiryService {
 		return er.findByEnquiryStatus("Pending");
 	}
 
+	@Override
+	public List ShowApprovedEnquiry() 
+	{
+		List cb=er.findByEnquiryStatus("Pending");
+		return cb;
+		
+       
+	}
+
+	
 	
      
 
