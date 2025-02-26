@@ -86,6 +86,15 @@ public class EnquiryController {
 		return new ResponseEntity<List<Cibil>>(cb, HttpStatus.OK);
 	
     } 
+	@GetMapping("/ApprovedEnquiry")
+	public ResponseEntity<List<Cibil>> showapprovedenquiry() {
+		
+		List<Cibil> cb = es.ShowApprovedEnquiry();
+		
+		return new ResponseEntity<List<Cibil>>(cb, HttpStatus.OK);
+	
+    } 
+	
 	
 	@PutMapping("updateEnquiryStatus")
 	public ResponseEntity<Enquiry> updateEnquiryStatus(@RequestBody Enquiry e){
@@ -94,6 +103,7 @@ public class EnquiryController {
 		
 		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
 	}
+	
 	
 	@GetMapping("enquiryByCibil/{cbCibilId}")
 	public ResponseEntity<Enquiry> getEnquiryByCibil(@PathVariable("cbCibilId") int cbCibilId) {
