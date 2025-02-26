@@ -139,4 +139,10 @@ public class EnquiryServiceImpl implements EnquiryService {
 		return er.findByCbCibilId(cbCibilId);
 	}
 
+	@Override
+	public List<Enquiry> pendingEnquiry(String enquiryStatus) {
+		
+		return er.findAll();
+	}
+
 }
