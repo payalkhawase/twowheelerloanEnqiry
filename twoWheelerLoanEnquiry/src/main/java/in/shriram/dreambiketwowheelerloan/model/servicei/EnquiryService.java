@@ -22,8 +22,10 @@ public interface EnquiryService {
 	public Enquiry getEnquiryByCibil(int cbCibilId);
 
    public Enquiry getEnquiryByStatus(int customerId);
-    
 
 	public List<Cibil> ShowRejectedEnquiry();
 
+	public List<Enquiry> pendingEnquiry(String enquiryStatus);
+
+	
 }
