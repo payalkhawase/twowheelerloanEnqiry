@@ -31,6 +31,7 @@ public class EnquiryController {
 		Enquiry en=es.setAllData(e);
 		
 		return new ResponseEntity<Enquiry>(en,HttpStatus.CREATED);
+		
 	}
 	
 
