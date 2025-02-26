@@ -25,7 +25,9 @@ public interface EnquiryService {
 
 	public List<Cibil> ShowRejectedEnquiry();
 
-	public List<Enquiry> pendingEnquiry(String enquiryStatus);
+	
+
+	public List<Enquiry> pendingEnquiry();
 
 	
 }
