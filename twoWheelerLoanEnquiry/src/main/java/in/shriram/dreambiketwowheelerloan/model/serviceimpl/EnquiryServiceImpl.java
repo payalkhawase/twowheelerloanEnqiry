@@ -89,50 +89,25 @@ public class EnquiryServiceImpl implements EnquiryService {
 		return null;
 	}
 
-	@Override
-	public Enquiry updateEnquiry(Enquiry e) {
-		
-		return er.save(e);
-	}
+	
 
 	@Override
 	public Enquiry getEnquiryByStatus(int customerId) {
 		
-		return null;
-		
+		return null;		
 	}
-
-	
 
 	@Override
 	public List ShowRejectedEnquiry() {
 		
 		List cb=er.findByEnquiryStatus("Rejected");
 		
-		
-		
-		
-		
 		return  cb;
 	}
 
 	@Override
 	public Enquiry updateEnquiryStatus(Enquiry e) {
-		/*
-		e.setCustomerId(customerId);
-		e.setFirstname(e.getFirstname());
-		e.setLastName(e.getLastName());
-		e.setAddress(e.getAddress());
-		e.setCity(e.getCity());
-		e.setAge(e.getAge());
-		e.setEmail(e.getEmail());
-		e.setMobileNo(e.getMobileNo());
-		e.setAlternateMobno(e.getAlternateMobno());
-		e.setPancardNo(e.getPancardNo());
-		e.setAdharcardNo(e.getAdharcardNo());
-		e.setEnquiryStatus(status);
-		e.setCb(e.getCb());
-		*/
+		
 		return er.save(e);
 	}
 	
