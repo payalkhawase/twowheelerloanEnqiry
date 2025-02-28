@@ -89,6 +89,7 @@ public class EnquiryController {
 		return new ResponseEntity<List<Cibil>>(cb, HttpStatus.OK);
 	
     } 
+	
 	@GetMapping("/ApprovedEnquiry")
 	public ResponseEntity<List<Cibil>> showapprovedenquiry() {
 		
@@ -113,8 +114,6 @@ public class EnquiryController {
 		
 		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
 	}
-	
-
 	
 	@GetMapping("/enquiry/getPendingEnquiry")
 	public ResponseEntity<List> pendingEnquiry()
