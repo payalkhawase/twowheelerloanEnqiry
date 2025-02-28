@@ -16,8 +16,6 @@ public interface EnquiryService {
 	public Enquiry delete(int customerId);
  
 	public Enquiry updateEnquiryStatus(Enquiry e);
-	
-	public Enquiry getEnquiryByCibil(int cbCibilId);
 
    public Enquiry getEnquiryByStatus(int customerId);
 
