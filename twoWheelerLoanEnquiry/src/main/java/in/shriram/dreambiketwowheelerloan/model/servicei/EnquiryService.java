@@ -19,7 +19,7 @@ public interface EnquiryService {
 
 	public Enquiry updateEnquiryStatus(Enquiry e);
 	
-	public Enquiry getEnquiryByCibil(int cbCibilId);
+	//public Enquiry getEnquiryByCibil(int cbCibilId);
 
    public Enquiry getEnquiryByStatus(int customerId);
 

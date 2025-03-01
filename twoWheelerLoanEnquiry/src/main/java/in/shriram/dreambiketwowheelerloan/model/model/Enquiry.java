@@ -32,11 +32,12 @@ public class Enquiry {
 	private String email;
 	private String mobileNo;
 	private long alternateMobno;
-	private String pancardNo;
+	private String pancardNo; 
 	private String adharcardNo;
 	private String enquiryStatus="Pending";
+	private String password;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private Cibil cb;
+	private Cibil cibil;
 	
 }
