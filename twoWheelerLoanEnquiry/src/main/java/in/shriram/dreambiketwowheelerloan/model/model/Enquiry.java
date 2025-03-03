@@ -30,6 +30,7 @@ public class Enquiry {
 	private String city;
 	private int age;
 	private String email;
+	private String password;
 	private String mobileNo;
 	private long alternateMobno;
 	private String pancardNo;
@@ -38,6 +39,6 @@ public class Enquiry {
 	private int password;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private Cibil cb;
+	private Cibil cibil;
 	
 }

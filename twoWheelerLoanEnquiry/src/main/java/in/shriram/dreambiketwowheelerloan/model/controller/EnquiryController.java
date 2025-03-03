@@ -33,6 +33,7 @@ public class EnquiryController {
 		Enquiry en=es.setAllData(e);
 		
 		return new ResponseEntity<Enquiry>(en,HttpStatus.CREATED);
+		
 	}
 	
 
@@ -52,13 +53,6 @@ public class EnquiryController {
 		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
 	}
 	
-	@PutMapping("/update")
-	public ResponseEntity<Enquiry> updateEnquirySingle(@RequestBody Enquiry e)
-	{
-		Enquiry er=es.updateEnquiry(e);
-		
-		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
-	}
 	
 	@DeleteMapping("/delete/{customerId}")
 	public ResponseEntity<Enquiry> delete(@PathVariable("customerId") int customerId){
@@ -104,17 +98,10 @@ public class EnquiryController {
 		
 		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
 	}
-	@GetMapping("/enquiryByCibil/{cbCibilId}")
-
-	public ResponseEntity<Enquiry> getEnquiryByCibil(@PathVariable("cbCibilId") int cbCibilId) {
-		
-		Enquiry eo = es.getEnquiryByCibil(cbCibilId);
-		
-		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
-	}
 	
 	@GetMapping("/enquiry/getPendingEnquiry")
 	public ResponseEntity<List> pendingEnquiry()
+
 	{
 		List eq = es.pendingEnquiry();
 		
