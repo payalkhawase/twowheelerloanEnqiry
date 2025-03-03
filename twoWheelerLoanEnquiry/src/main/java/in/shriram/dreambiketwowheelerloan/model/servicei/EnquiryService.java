@@ -18,8 +18,6 @@ public interface EnquiryService {
 	public Enquiry updateEnquiry(Enquiry e);
 
 	public Enquiry updateEnquiryStatus(Enquiry e);
-	
-	public Enquiry getEnquiryByCibil(int cbCibilId);
 
    public Enquiry getEnquiryByStatus(int customerId);
 
@@ -28,6 +26,7 @@ public interface EnquiryService {
 	public List<Cibil> ShowApprovedEnquiry();
 
 	public List<Cibil> ShowRejectedEnquiry();
+
 
 	
 }

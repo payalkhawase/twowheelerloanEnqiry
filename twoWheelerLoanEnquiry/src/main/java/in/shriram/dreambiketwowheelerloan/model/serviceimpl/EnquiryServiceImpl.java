@@ -135,12 +135,7 @@ public class EnquiryServiceImpl implements EnquiryService {
 		*/
 		return er.save(e);
 	}
-	
-	@Override
-	public Enquiry getEnquiryByCibil(int cbCibilId) {
-		
-		return er.findByCbCibilId(cbCibilId);
-	}
+
 
 	@Override
 	public List<Enquiry> pendingEnquiry() {
@@ -156,8 +151,5 @@ public class EnquiryServiceImpl implements EnquiryService {
        
 	}
 
-	
-	
-     
 
 }
