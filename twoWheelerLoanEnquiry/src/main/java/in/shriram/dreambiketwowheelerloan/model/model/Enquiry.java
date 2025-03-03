@@ -35,7 +35,7 @@ public class Enquiry {
 	private String pancardNo;
 	private String adharcardNo;
 	private String enquiryStatus="Pending";
-	private int password;
+	private String password;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Cibil cibil;
