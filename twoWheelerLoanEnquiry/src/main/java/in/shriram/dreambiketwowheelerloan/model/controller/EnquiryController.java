@@ -99,10 +99,6 @@ public class EnquiryController {
 		
 		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'main' of https://github.com/payalkhawase/twowheelerloanEnqiry.git
 	
 	@GetMapping("/enquiry/getPendingEnquiry")
 	public ResponseEntity<List> pendingEnquiry()

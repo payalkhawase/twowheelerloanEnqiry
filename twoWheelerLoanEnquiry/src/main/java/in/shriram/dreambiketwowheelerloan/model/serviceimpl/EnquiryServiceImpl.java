@@ -110,11 +110,6 @@ public class EnquiryServiceImpl implements EnquiryService {
 		
 		return er.save(e);
 	}
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> branch 'main' of https://github.com/payalkhawase/twowheelerloanEnqiry.git
 
 	@Override
 	public List<Enquiry> pendingEnquiry() {
