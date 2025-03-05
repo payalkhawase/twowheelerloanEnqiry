@@ -12,7 +12,11 @@ import in.shriram.dreambiketwowheelerloan.model.model.Enquiry;
 @Repository
 public interface EnquiryRepo extends JpaRepository<Enquiry, Integer>{
 
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> branch 'main' of https://github.com/payalkhawase/twowheelerloanEnqiry.git
 	public List findByEnquiryStatus(String str);
 
 	
