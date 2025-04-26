@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import in.shriram.dreambiketwowheelerloan.model.model.Cibil;
 import in.shriram.dreambiketwowheelerloan.model.model.Enquiry;
 import in.shriram.dreambiketwowheelerloan.model.servicei.EnquiryService;
@@ -35,7 +38,6 @@ public class EnquiryController {
 		return new ResponseEntity<Enquiry>(en,HttpStatus.CREATED);
 		
 	}
-	
 
 	@GetMapping("/enquiry")
 	public ResponseEntity<List<Enquiry>> getAllEnquiry(){
