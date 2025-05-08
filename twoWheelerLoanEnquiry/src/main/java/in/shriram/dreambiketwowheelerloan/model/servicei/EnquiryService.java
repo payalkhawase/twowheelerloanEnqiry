@@ -23,6 +23,8 @@ public interface EnquiryService {
 
 	public List<Cibil> ShowApprovedEnquiry();
 
+	public Enquiry updateEnquiryStatusForword(int customerId);
+
 	public List<Cibil> ShowRejectedEnquiry();
 
 	
