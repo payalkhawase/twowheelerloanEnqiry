@@ -107,6 +107,15 @@ public class EnquiryController {
 		
 		return new ResponseEntity<List>(eq, HttpStatus.OK);
 	}
+
+        @PutMapping("/updateEnquiryStatusforword/{customerId}")
+	public ResponseEntity<Enquiry> updateEnquiryStatusForword(@PathVariable("customerId") int customerId)
+	{
+		Enquiry er=es.updateEnquiryStatusForword(customerId);
+		
+		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
+	}
+}
 	
 }
 	
