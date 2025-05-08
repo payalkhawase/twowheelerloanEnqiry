@@ -25,6 +25,10 @@ public interface EnquiryService {
 
 	public List<Cibil> ShowRejectedEnquiry();
 
+	public Enquiry ShowData(String email, String password);
+
+	public List<Enquiry> forwordOE();
+
 
 	
 }

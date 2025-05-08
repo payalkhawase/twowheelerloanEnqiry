@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -89,8 +90,6 @@ public class EnquiryServiceImpl implements EnquiryService {
 		return null;
 	}
 
-	
-
 	@Override
 	public Enquiry getEnquiryByStatus(int customerId) {
 		
@@ -107,7 +106,6 @@ public class EnquiryServiceImpl implements EnquiryService {
 
 	@Override
 	public Enquiry updateEnquiryStatus(Enquiry e) {
-		
 		return er.save(e);
 	}
 
@@ -121,8 +119,20 @@ public class EnquiryServiceImpl implements EnquiryService {
 	{
 		List cb=er.findByEnquiryStatus("Approved");
 		return cb;
+	}
+
+	@Override
+	public Enquiry ShowData(String email, String password) {
+		// TODO Auto-generated method stub
 		
-       
+		return er.findByEmailAndPassword(email, password);
+		
+	}
+
+	@Override
+	public List<Enquiry> forwordOE() {
+	
+		return er.findByEnquiryStatus("ForwordOe");
 	}
 
 

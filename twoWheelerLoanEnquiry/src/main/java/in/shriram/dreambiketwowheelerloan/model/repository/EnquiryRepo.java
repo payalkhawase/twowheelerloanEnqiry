@@ -15,6 +15,7 @@ public interface EnquiryRepo extends JpaRepository<Enquiry, Integer>{
 	
 	public List findByEnquiryStatus(String str);
 	
-	
+	public Enquiry findByEmailAndPassword(String email, String password);
 
+	
 }
