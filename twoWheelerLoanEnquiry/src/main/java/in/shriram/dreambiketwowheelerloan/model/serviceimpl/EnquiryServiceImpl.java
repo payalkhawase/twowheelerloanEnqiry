@@ -138,7 +138,11 @@ public class EnquiryServiceImpl implements EnquiryService {
 		return er.save(e);
 	}
 	
+	@Override
+	public List<Enquiry> forwordOE() {
 	
+		return er.findByEnquiryStatus("ForwordOe");
+	}
      
 
 }
