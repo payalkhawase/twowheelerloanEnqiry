@@ -26,6 +26,7 @@ public interface EnquiryService {
 	public Enquiry updateEnquiryStatusForword(int customerId);
 
 	public List<Cibil> ShowRejectedEnquiry();
-
+	
+        public List<Enquiry> forwordOE();
 	
 }
