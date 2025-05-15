@@ -126,6 +126,15 @@ public class EnquiryServiceImpl implements EnquiryService {
        
 	}
 
+	@Override
+	public Enquiry updateEnquiryStatusForword(int customerId) {
+      Enquiry e=er.findById(customerId).get();
+		
+		e.setEnquiryStatus("ForwardOe");
+	
+		return er.save(e);
+	}
+
 	
 	
      
