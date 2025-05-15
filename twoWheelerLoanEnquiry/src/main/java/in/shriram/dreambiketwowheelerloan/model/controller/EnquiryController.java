@@ -108,13 +108,32 @@ public class EnquiryController {
 		
 		return new ResponseEntity<List>(eq, HttpStatus.OK);
 	}
-	 @PutMapping("/updateEnquiryStatusforword/{customerId}")
-		public ResponseEntity<Enquiry> updateEnquiryStatusForword(@PathVariable("customerId") int customerId)
-		{
-			Enquiry er=es.updateEnquiryStatusForword(customerId);
-			
-			return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
-		}
+
+//	 @PutMapping("/updateEnquiryStatusforword/{customerId}")
+//		public ResponseEntity<Enquiry> updateEnquiryStatusForword(@PathVariable("customerId") int customerId)
+//		{
+//			Enquiry er=es.updateEnquiryStatusForword(customerId);
+//			
+//			return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
+//		}
+
+
+        @PutMapping("/updateEnquiryStatusforword/{customerId}")
+	public ResponseEntity<Enquiry> updateEnquiryStatusForword(@PathVariable("customerId") int customerId)
+	{
+		Enquiry er=es.updateEnquiryStatusForword(customerId);
+		
+		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
+	}
+
+	@GetMapping("/enquiry/getForwordOE")
+	public ResponseEntity<List<Enquiry>> forwordOE()
+	{
+		List<Enquiry> e = es.forwordOE();
+		
+		return new ResponseEntity<List<Enquiry>>(e, HttpStatus.OK);
+	}
+
 	
 }
 	
