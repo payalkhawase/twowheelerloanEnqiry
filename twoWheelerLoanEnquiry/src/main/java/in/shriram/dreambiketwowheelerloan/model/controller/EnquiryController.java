@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +22,7 @@ import in.shriram.dreambiketwowheelerloan.model.servicei.EnquiryService;
 
 @RestController
 @RequestMapping("/enq")
+//@CrossOrigin("http://localhost:5173")
 public class EnquiryController {
 
 	@Autowired
@@ -123,6 +125,22 @@ public class EnquiryController {
 		List eq = es.pendingEnquiry();
 		
 		return new ResponseEntity<List>(eq, HttpStatus.OK);
+	} 
+	
+	@PutMapping("/updateEnquiryStatusforword/{customerId}")
+	public ResponseEntity<Enquiry> updateEnquiryStatusForword(@PathVariable("customerId") int customerId)
+	{
+		Enquiry er=es.updateEnquiryStatusForword(customerId);
+		
+		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
+	}
+	
+	@GetMapping("/enquiry/getForwordOE")
+	public ResponseEntity<List> forwordOE()
+	{
+		List e = es.forwordOE();
+		
+		return new ResponseEntity<List>(e, HttpStatus.OK);
 	}
 	
 }
